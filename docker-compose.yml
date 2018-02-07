@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  web:
+    image: markshaw/lab2-webserver:1.0
+    deploy:
+      replicas: 1
+    volumes:
+      - ./web-demo:/var/www/html
+    ports:
+      - "8000:80"
+    networks:
+      - webnet
+
+networks:
+  webnet:
